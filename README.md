@@ -8,10 +8,13 @@ Aplikasi ini adalah sebuah REST API yang digunakan untuk melakukan booking tiket
   <li>Authentication dan Authorization menggunakan JSON Web Token (JWT)</li>
 </ul>
 
-<br />
-
 <h3>Cara installasi</h3>
 <ol type="1">
-  <li>Clone repositori ini ke dalam direktori lokal: <br /> git clone https://github.com/ramdhaniakbar/rest_api_tiket_hotel.git</li>
-  <li>Clone repositori ini ke dalam direktori lokal: <br /> git clone https://github.com/ramdhaniakbar/rest_api_tiket_hotel.git</li>
+  <li>Clone repositori ini ke dalam direktori lokal: <br /> <strong>git clone https://github.com/ramdhaniakbar/rest_api_tiket_hotel.git</strong></li>
+  <li>Masuk ke project: <br /> <strong>rest_api_tiket_hotel</strong></li>
+  <li>Instal dependensi dengan menjalankan perintah berikut: <br /> <strong>npm install</strong></li>
+  <li>Jalankan migrasi database untuk membuat tabel-tabel yang diperlukan: <br /> <strong>npx sequelize db:migrate</strong></li>
+  <li>Jalankan run seeder untuk membuat dummy data yang diperlukan: <br /> <strong>npx sequelize db:seed:all</strong></li>
+  <li>Jalankan aplikasi dengan perintah berikut:
+: <br /> <strong>npm start</strong></li>
 </ol>
