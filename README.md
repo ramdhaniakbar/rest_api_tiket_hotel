@@ -12,6 +12,7 @@ Aplikasi ini adalah sebuah REST API yang digunakan untuk melakukan booking tiket
 
 <br />
 
+<h3>Cara installasi</h3>
 <ol type="1">
   <li>Clone repositori ini ke dalam direktori lokal: <br /> git clone https://github.com/ramdhaniakbar/rest_api_tiket_hotel.git</li>
   <li>Clone repositori ini ke dalam direktori lokal: <br /> git clone https://github.com/ramdhaniakbar/rest_api_tiket_hotel.git</li>
