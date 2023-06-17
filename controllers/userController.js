@@ -119,16 +119,12 @@ exports.getPenghasilan = async (req, res) => {
 			})
 		}
 
-		const penghasilan = await Booking.sum("harga_kamar", {
-			where: { sales_code: "3T0BZS" },
-		})
-
 		const data = {
 			nama: user.nama,
 			email: user.email,
 			no_hp: user.no_hp,
 			alamat: user.alamat,
-			saldo: penghasilan,
+			saldo: user.saldo,
 		}
 
 		res.status(200).json({

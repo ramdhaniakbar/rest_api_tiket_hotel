@@ -127,7 +127,7 @@ exports.createBooking = async (req, res) => {
 				})
 			}
 
-			const booking = await Booking.create({
+			const data = {
 				user_id: user.id,
 				kamar_id: kamar_id,
 				harga_kamar: harga_kamar,
@@ -136,7 +136,9 @@ exports.createBooking = async (req, res) => {
 				pendapatan_sales: komisi_sales,
 				tanggal_check_in: tanggal_check_in,
 				tanggal_check_out: tanggal_check_out,
-			})
+			}
+
+			const booking = await Booking.create(data)
 
 			pakAmir.saldo += pendapatan_bersih
 			await pakAmir.save()
@@ -155,7 +157,7 @@ exports.createBooking = async (req, res) => {
 			const pendapatan_bersih = harga_kamar
 			const pendapatan_sales = 0
 
-			const booking = await Booking.create({
+			const data = {
 				user_id: user.id,
 				kamar_id: kamar_id,
 				harga_kamar: harga_kamar,
@@ -164,7 +166,9 @@ exports.createBooking = async (req, res) => {
 				pendapatan_sales: pendapatan_sales,
 				tanggal_check_in: tanggal_check_in,
 				tanggal_check_out: tanggal_check_out,
-			})
+			}
+
+			const booking = await Booking.create(data)
 
 			pakAmir.saldo += pendapatan_bersih
 			await pakAmir.save()
@@ -189,7 +193,7 @@ exports.createBooking = async (req, res) => {
 				})
 			}
 
-			const booking = await Booking.create({
+			const data = {
 				user_id: user.id,
 				kamar_id: kamar_id,
 				harga_kamar: harga_kamar,
@@ -198,7 +202,9 @@ exports.createBooking = async (req, res) => {
 				pendapatan_sales: pendapatan_sales,
 				tanggal_check_in: tanggal_check_in,
 				tanggal_check_out: tanggal_check_out,
-			})
+			}
+
+			const booking = await Booking.create(data)
 
 			sales.saldo += pendapatan_bersih
 			await sales.save()
