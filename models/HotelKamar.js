@@ -1,6 +1,3 @@
-const Booking = require("./Booking")
-const Hotel = require("./Hotel")
-
 module.exports = (sequelize, DataTypes) => {
 	const HotelKamar = sequelize.define(
 		"HotelKamar",

@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
+const { body } = require("express-validator")
 const { HotelKamar } = require("../models")
+const { createHotelKamar } = require("../controllers/hotelkamarController")
 
 /* GET users listing. */
 router.get("/", function (req, res) {
@@ -8,6 +10,33 @@ router.get("/", function (req, res) {
 })
 
 /* POST hotel kamar listing. */
+router.post("/", [
+	body("hotel_id")
+		.exists()
+		.withMessage("Hotel id is required")
+		.isInt()
+		.withMessage("Invalid input hotel id"),
+	body("nama_kamar")
+		.exists()
+		.withMessage("Nama kamar is required")
+		.trim()
+		.escape()
+		.withMessage("Invalid input nama kamar"),
+	body("nomor_kamar")
+		.exists()
+		.withMessage("Nomor kamar is required")
+		.trim()
+		.escape()
+		.withMessage("Invalid input nomor kamar"),
+	body("harga")
+		.exists()
+		.withMessage("Harga is required")
+		.isInt()
+		.withMessage("Invalid input harga"),
+	body("deskripsi").optional().isString().withMessage("Invalid input deskripsi"),
+	createHotelKamar,
+])
+
 router.post("/", async (req, res) => {
 	try {
 		const { hotel_id, nama_kamar, nomor_kamar, harga, deskripsi } = req.body
