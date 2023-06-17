@@ -9,3 +9,7 @@ Aplikasi ini adalah sebuah REST API yang digunakan untuk melakukan booking tiket
   <li>Manajemen pemesanan (buat pesanan, lihat list pesanan)</li>
   <li>Authentication dan Authorization menggunakan JSON Web Token (JWT)</li>
 <ul>
+
+<ol>
+  <li>Clone repositori ini ke dalam direktori lokal: <br /></li>
+</ol>
