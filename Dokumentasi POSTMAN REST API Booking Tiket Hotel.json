@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "f9ae31c1-1949-45e1-b7ee-86757012d624",
+		"name": "Dokumentasi POSTMAN REST API Booking Tiket Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22418369"
+	},
+	"item": [
+		{
+			"name": "Create Hotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Grand Ussu\",\r\n    \"alamat\": \"Jl. Cisarua Puncak\",\r\n    \"no_hp\": \"08327498327\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotels",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["hotels"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Hotel Kamar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hotel_id\": 2,\r\n    \"nama_kamar\": \"Swann\",\r\n    \"nomor_kamar\": \"27\",\r\n    \"harga\": 800000,\r\n    \"deskripsi\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/hotelkamar",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["hotelkamar"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nama\": \"Eren Jaeger\",\r\n   \"email\": \"eren@gmail.com\",\r\n   \"password\": \"123456\",\r\n   \"no_hp\": \"\",\r\n   \"alamat\": \"\",\r\n   \"saldo\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["users", "register"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"amir@gmail.com\",\r\n   \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["users", "login"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtYSI6IlJhbWRoYW5pIEFrYmFyIiwiZW1haWwiOiJyYW1kaGFuaWFrYmFyQGdtYWlsLmNvbSIsInNhbGVzX2NvZGUiOiJZMDlURlAiLCJpYXQiOjE2ODY5NjQwNTYsImV4cCI6MTY4NzIyMzI1Nn0.QYyzI5Oz0OWeZPZmAO_Ha6lPdIWcecODrRZM9LGRvMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"kamar_id\": 1,\r\n    \"sales_code\": \"3T0BZS\",\r\n    \"tanggal_check_in\": \"2023-06-25\",\r\n    \"tanggal_check_out\": \"2023-06-26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bookings",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["bookings"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Booking List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IkVyZW4gSmFlZ2VyIiwiZW1haWwiOiJlcmVuQGdtYWlsLmNvbSIsInNhbGVzX2NvZGUiOiJCWEdaN0EiLCJpYXQiOjE2ODY5NDE5NjIsImV4cCI6MTY4NzIwMTE2Mn0.6thrDzAHP3RNMcRRsgeKgTY0e79gutyT4cHDYFKnNkU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 5,\r\n    \"kamar_id\": 6,\r\n    \"sales_code\": \"Y09T_P\",\r\n    \"tanggal_check_in\": \"2023-07-04\",\r\n    \"tanggal_check_out\": \"2023-07-05\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bookings",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["bookings"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Penghasilan",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IlBhayBBbWlyIiwiZW1haWwiOiJhbWlyQGdtYWlsLmNvbSIsInNhbGVzX2NvZGUiOiIzVDBCWlMiLCJpYXQiOjE2ODY5NjYxNTgsImV4cCI6MTY4NzIyNTM1OH0.I4QcCazHAghZ49wCv8juKy7OXCx08jp2LamW_3-K5Pc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/penghasilan",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["users", "penghasilan"]
+				}
+			},
+			"response": []
+		}
+	]
+}
